@@ -1,4 +1,5 @@
 import 'package:admin_dashboard/features/dashboard/data/models/user_model.dart';
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/drawer_section/custom_drawer_list.dart';
 import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/drawer_section/user_info.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,9 @@ class CustomDrawer extends StatelessWidget {
         children: [
           UserInfo(userModel: userModel),
           const SizedBox(
-            height: 20,
+            height: 8,
           ),
+          const CustomDrawerList(),
         ],
       ),
     );

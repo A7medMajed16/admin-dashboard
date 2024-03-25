@@ -7,6 +7,9 @@ class AppIcons {
   /// Assets for iconsCardUserImage
   static const String iconsCardUserImage = "assets/icons/card_user_image.svg";
 
+  /// Assets for iconsCardUserImage
+  static const String iconsWallet = "assets/icons/wallet.svg";
+
   /// Assets for iconsDashboard
   static const String iconsDashboard = "assets/icons/dashboard.svg";
 
