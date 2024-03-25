@@ -1,5 +1,7 @@
 class DrawerItemModel {
   final String iconPath, title;
+  final bool isSelected;
 
-  DrawerItemModel({required this.iconPath, required this.title});
+  DrawerItemModel(this.isSelected,
+      {required this.iconPath, required this.title});
 }
