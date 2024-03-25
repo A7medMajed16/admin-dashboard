@@ -16,6 +16,7 @@ class CustomDrawer extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 48),
         child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
               child: UserInfo(userModel: userModel),
