@@ -2,7 +2,7 @@ import 'package:admin_dashboard/core/utils/app_images.dart';
 import 'package:admin_dashboard/features/dashboard/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 
-import 'drawer_section/custom_drawer.dart';
+import '../../sections/drawer_section/custom_drawer.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({super.key});
