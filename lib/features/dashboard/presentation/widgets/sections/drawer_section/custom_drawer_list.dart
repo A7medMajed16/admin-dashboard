@@ -27,10 +27,8 @@ class _CustomDrawerListState extends State<CustomDrawerList> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return SliverList.builder(
       itemCount: items.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.only(top: 20),
         child: GestureDetector(

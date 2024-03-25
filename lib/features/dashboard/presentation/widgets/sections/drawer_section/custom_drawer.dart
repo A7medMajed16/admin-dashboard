@@ -15,27 +15,45 @@ class CustomDrawer extends StatelessWidget {
       color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 48),
-        child: Column(
-          children: [
-            UserInfo(userModel: userModel),
-            const SizedBox(
-              height: 8,
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: UserInfo(userModel: userModel),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 8,
+              ),
             ),
             const CustomDrawerList(),
-            const Expanded(child: SizedBox()),
-            const DrawerItem(
-              drawerItemModel: DrawerItemModel(
-                iconPath: AppIcons.iconsSetting,
-                title: 'Setting system',
+            const SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 20,
+                    ),
+                  ),
+                  DrawerItem(
+                    drawerItemModel: DrawerItemModel(
+                      iconPath: AppIcons.iconsSetting,
+                      title: 'Setting system',
+                    ),
+                    isActive: false,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  DrawerItem(
+                    drawerItemModel: DrawerItemModel(
+                      iconPath: AppIcons.iconsLogout,
+                      title: 'Logout account',
+                    ),
+                    isActive: false,
+                  ),
+                ],
               ),
-              isActive: false,
-            ),
-            const DrawerItem(
-              drawerItemModel: DrawerItemModel(
-                iconPath: AppIcons.iconsLogout,
-                title: 'Logout account',
-              ),
-              isActive: false,
             ),
           ],
         ),
