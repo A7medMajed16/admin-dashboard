@@ -2,7 +2,7 @@ class AppImages {
   AppImages._();
 
   /// Assets for imagesCardBackground
-  static const String imagesCardBackground = "assets/images/cardBackground.svg";
+  static const String imagesCardBackground = "assets/images/cardBackground.png";
 
   /// Assets for imagesHappyFrame
   static const String imagesHappyFrame = "assets/images/happyFrame.svg";

@@ -2,6 +2,7 @@ import 'package:admin_dashboard/core/utils/app_images.dart';
 
 import 'package:admin_dashboard/features/dashboard/data/models/user_model.dart';
 import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/all_expenses_section/all_expenses.dart';
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/my_card.dart';
 import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/quick_invoice_section/quick_invoice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,9 +26,9 @@ class DesktopLayout extends StatelessWidget {
           ),
         ),
         const Expanded(
-          flex: 4,
+          flex: 3,
           child: Padding(
-            padding: EdgeInsets.all(35),
+            padding: EdgeInsets.only(top: 40, left: 32, bottom: 32, right: 24),
             child: CustomScrollView(
               physics: BouncingScrollPhysics(),
               slivers: [
@@ -37,6 +38,19 @@ class DesktopLayout extends StatelessWidget {
             ),
           ),
         ),
+        const Expanded(
+          flex: 2,
+          child: Padding(
+            padding: EdgeInsets.only(top: 40, right: 32),
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: MyCard(),
+                ),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }
