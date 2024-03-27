@@ -1,11 +1,12 @@
-import 'package:admin_dashboard/core/utils/app_icons.dart';
 import 'package:admin_dashboard/core/utils/app_images.dart';
-import 'package:admin_dashboard/core/utils/styles.dart';
+import 'package:admin_dashboard/features/dashboard/data/models/card_model.dart';
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/card_item_number.dart';
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/card_item_title.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CardsItem extends StatelessWidget {
-  const CardsItem({super.key});
+  const CardsItem({super.key, required this.cardModel});
+  final CardModel cardModel;
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +23,14 @@ class CardsItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            ListTile(
-              contentPadding:
-                  const EdgeInsets.only(left: 31, right: 45, top: 20),
-              title: Text(
-                'Name card',
-                style: Styles.textStyle16W400.copyWith(color: Colors.white),
-              ),
-              subtitle: Text(
-                'John Doe',
-                style: Styles.textStyle20W500,
-              ),
-              trailing: SvgPicture.asset(AppIcons.iconsCardUserImage),
+            CardItemTitle(
+              cardName: cardModel.cardName,
+            ),
+            CardNumber(
+              cardModel: cardModel,
             ),
           ],
         ),

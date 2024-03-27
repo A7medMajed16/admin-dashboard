@@ -1,4 +1,5 @@
 import 'package:admin_dashboard/core/utils/styles.dart';
+import 'package:admin_dashboard/features/dashboard/data/models/card_model.dart';
 import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/cards_item.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,13 @@ class MyCard extends StatelessWidget {
             style: Styles.textStyle20W600,
           ),
           const SizedBox(height: 20),
-          const CardsItem(),
+          CardsItem(
+            cardModel: CardModel(
+                cardName: 'Ahmed Majed',
+                cardNumber: '1234 5678 9101 1123',
+                expiredDate: '12/20',
+                cvv: '124'),
+          ),
         ],
       ),
     );
