@@ -15,6 +15,7 @@ class CardsItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           image: const DecorationImage(
+            fit: BoxFit.fill,
             image: AssetImage(
               AppImages.imagesCardBackground,
             ),

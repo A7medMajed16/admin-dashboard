@@ -1,17 +1,13 @@
+import 'package:admin_dashboard/core/utils/format_number.dart';
 import 'package:admin_dashboard/core/utils/styles.dart';
 import 'package:admin_dashboard/features/dashboard/data/models/all_expenses_item_model.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class AllExpensesItemBody extends StatelessWidget {
   const AllExpensesItemBody(
       {super.key, required this.allExpensesItemMode, required this.isActive});
   final AllExpensesItemMode allExpensesItemMode;
   final bool isActive;
-  String formatNumber(double number) {
-    final formatter = NumberFormat('#,##0', 'en_US');
-    return formatter.format(number);
-  }
 
   @override
   Widget build(BuildContext context) {

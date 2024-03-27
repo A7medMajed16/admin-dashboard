@@ -1,10 +1,35 @@
 import 'package:admin_dashboard/core/utils/styles.dart';
-import 'package:admin_dashboard/features/dashboard/data/models/card_model.dart';
-import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/cards_item.dart';
+
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/cards_view.dart';
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/dots_indecator.dart';
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/transaction_history.dart';
 import 'package:flutter/material.dart';
 
-class MyCard extends StatelessWidget {
+class MyCard extends StatefulWidget {
   const MyCard({super.key});
+
+  @override
+  State<MyCard> createState() => _MyCardState();
+}
+
+class _MyCardState extends State<MyCard> {
+  late PageController pageController;
+  int currentCardIndex = 0;
+  @override
+  void initState() {
+    pageController = PageController();
+    pageController.addListener(() {
+      currentCardIndex = pageController.page!.round();
+      setState(() {});
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +47,19 @@ class MyCard extends StatelessWidget {
             style: Styles.textStyle20W600,
           ),
           const SizedBox(height: 20),
-          CardsItem(
-            cardModel: CardModel(
-                cardName: 'Ahmed Majed',
-                cardNumber: '1234 5678 9101 1123',
-                expiredDate: '12/20',
-                cvv: '124'),
+          CardPageView(
+            pageController: pageController,
           ),
+          const SizedBox(height: 19),
+          DotsIndecatore(
+            currentCardIndex: currentCardIndex,
+          ),
+          const Divider(
+            height: 40,
+            thickness: 1,
+            color: Color(0xffF1F1F1),
+          ),
+          const TransactionHistory(),
         ],
       ),
     );
