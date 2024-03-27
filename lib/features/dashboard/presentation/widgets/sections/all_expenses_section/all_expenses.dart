@@ -1,4 +1,6 @@
 import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/all_expenses_section/all_expenses_header.dart';
+
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/all_expenses_section/all_expenses_list.dart';
 import 'package:flutter/material.dart';
 
 class AllExpenses extends StatelessWidget {
@@ -13,8 +15,11 @@ class AllExpenses extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AllExpensesHeader(),
+          SizedBox(height: 16),
+          AllExpensesList(),
         ],
       ),
     );
