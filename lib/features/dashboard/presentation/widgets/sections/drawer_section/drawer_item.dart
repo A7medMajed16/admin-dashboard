@@ -15,6 +15,7 @@ class DrawerItem extends StatelessWidget {
       leading: SvgPicture.asset(drawerItemModel.iconPath),
       title: Text(
         drawerItemModel.title,
+        overflow: TextOverflow.ellipsis,
         style: isActive ? Styles.textStyle16W700 : Styles.textStyle16W400,
       ),
       trailing: AnimatedContainer(

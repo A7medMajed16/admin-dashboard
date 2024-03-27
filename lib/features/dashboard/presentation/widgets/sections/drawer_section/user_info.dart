@@ -16,15 +16,17 @@ class UserInfo extends StatelessWidget {
     return Card(
       color: const Color(0xffFAFAFA),
       elevation: 0,
-      child: ListTile(
-        leading: SvgPicture.asset(userModel.imagePath),
-        title: Text(
-          userModel.name,
-          style: Styles.textStyle16W600,
-        ),
-        subtitle: Text(
-          userModel.email,
-          style: Styles.textStyle12W400,
+      child: Center(
+        child: ListTile(
+          leading: SvgPicture.asset(userModel.imagePath),
+          title: Text(
+            userModel.name,
+            style: Styles.textStyle16W600,
+          ),
+          subtitle: Text(
+            userModel.email,
+            style: Styles.textStyle12W400,
+          ),
         ),
       ),
     );

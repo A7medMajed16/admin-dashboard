@@ -46,23 +46,9 @@ class _AllExpensesListState extends State<AllExpensesList> {
       children: allExpensesItems.asMap().entries.map((e) {
         int index = e.key;
         var item = e.value;
-        if (index == 1) {
-          return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: GestureDetector(
-                onTap: () => setState(() {
-                  selectedIndex = index;
-                }),
-                child: AllExpensesItem(
-                  allExpensesItemMode: item,
-                  isActive: selectedIndex == index,
-                ),
-              ),
-            ),
-          );
-        } else {
-          return Expanded(
+        return Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: index == 1 ? 8 : 0),
             child: GestureDetector(
               onTap: () => setState(() {
                 selectedIndex = index;
@@ -72,8 +58,8 @@ class _AllExpensesListState extends State<AllExpensesList> {
                 isActive: selectedIndex == index,
               ),
             ),
-          );
-        }
+          ),
+        );
       }).toList(),
     );
   }

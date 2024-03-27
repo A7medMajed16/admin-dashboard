@@ -14,7 +14,7 @@ class CustomDrawer extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 48),
+        padding: const EdgeInsets.only(top: 48, bottom: 48, left: 25),
         child: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [

@@ -10,9 +10,15 @@ class AdminDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DashboardView(),
+      home: const DashboardView(),
+      theme: ThemeData(
+          textSelectionTheme: TextSelectionThemeData(
+        cursorColor: const Color(0xff4EB7F2),
+        selectionColor: const Color(0xff4EB7F2).withOpacity(0.5),
+        selectionHandleColor: const Color(0xff4EB7F2),
+      )),
     );
   }
 }
