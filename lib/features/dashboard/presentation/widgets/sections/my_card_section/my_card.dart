@@ -1,7 +1,7 @@
 import 'package:admin_dashboard/core/utils/styles.dart';
 
 import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/cards_view.dart';
-import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/dots_indecator.dart';
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/dots_indicator.dart';
 import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/transaction_history.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +51,7 @@ class _MyCardState extends State<MyCard> {
             pageController: pageController,
           ),
           const SizedBox(height: 19),
-          DotsIndecatore(
+          DotsIndicator(
             currentCardIndex: currentCardIndex,
           ),
           const Divider(

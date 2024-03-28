@@ -6,5 +6,9 @@
         "Madrani",
         "Madraniadi",
         "Okeowo"
-    ]
+    ],
+    "cSpell.enableFiletypes": [
+        "dart"
+    ],
+    "cSpell.language": "lorem,en-US,en-GB,en"
 }
