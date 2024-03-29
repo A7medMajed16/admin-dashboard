@@ -19,11 +19,17 @@ class TransactionHistoryItem extends StatelessWidget {
             transactionModel.transactionName,
             style: Styles.textStyle16W600,
           ),
-          subtitle: Text(
-            transactionModel.date,
-            style:
-                Styles.textStyle16W600.copyWith(color: const Color(0xffAAAAAA)),
-          ),
+          subtitle: transactionModel.time == null
+              ? Text(
+                  transactionModel.date,
+                  style: Styles.textStyle16W600
+                      .copyWith(color: const Color(0xffAAAAAA)),
+                )
+              : Text(
+                  '${transactionModel.date} at ${transactionModel.time}',
+                  style: Styles.textStyle16W600
+                      .copyWith(color: const Color(0xffAAAAAA)),
+                ),
           trailing: Text(
             "\$${formatNumber(transactionModel.amount)}",
             style: Styles.textStyle20W600.copyWith(

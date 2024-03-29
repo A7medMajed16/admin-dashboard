@@ -4,7 +4,7 @@ class TransactionModel {
   final double amount;
   final bool isIncome;
 
-  TransactionModel({
+  const TransactionModel({
     required this.transactionName,
     required this.date,
     this.time,

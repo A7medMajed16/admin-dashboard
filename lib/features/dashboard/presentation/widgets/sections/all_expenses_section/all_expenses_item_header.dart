@@ -12,6 +12,8 @@ class AllExpensesItemHeader extends StatelessWidget {
   final bool isActive;
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
+
     return Row(
       children: [
         CircleAvatar(
@@ -22,10 +24,12 @@ class AllExpensesItemHeader extends StatelessWidget {
             child: SvgPicture.asset(iconPath),
           ),
         ),
-        const Spacer(),
-        SvgPicture.asset(isActive
-            ? AppIcons.iconsRightArrowActive
-            : AppIcons.iconsRightArrow),
+        width > 800 ? const Spacer() : const SizedBox(),
+        width > 800
+            ? SvgPicture.asset(isActive
+                ? AppIcons.iconsRightArrowActive
+                : AppIcons.iconsRightArrow)
+            : const SizedBox(),
       ],
     );
   }

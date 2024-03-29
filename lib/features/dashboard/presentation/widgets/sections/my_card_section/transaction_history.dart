@@ -1,7 +1,6 @@
 import 'package:admin_dashboard/core/utils/styles.dart';
-import 'package:admin_dashboard/features/dashboard/data/models/transaction_model.dart';
 import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/transaction_history_header.dart';
-import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/transaction_history_item.dart';
+import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections/my_card_section/transaction_history_list.dart';
 import 'package:flutter/material.dart';
 
 class TransactionHistory extends StatelessWidget {
@@ -19,14 +18,7 @@ class TransactionHistory extends StatelessWidget {
           style:
               Styles.textStyle16W500.copyWith(color: const Color(0xffAAAAAA)),
         ),
-        TransactionHistoryItem(
-          transactionModel: TransactionModel(
-            transactionName: 'Kareem Khaled',
-            date: '13 Apr, 2024',
-            amount: 20129,
-            isIncome: false,
-          ),
-        ),
+        const TransactionHistoryList(),
       ],
     );
   }

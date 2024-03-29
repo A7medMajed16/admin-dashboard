@@ -3,15 +3,15 @@ import 'package:admin_dashboard/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class AllExpensesHeader extends StatefulWidget {
-  const AllExpensesHeader({super.key});
+class IncomeHeader extends StatefulWidget {
+  const IncomeHeader({super.key});
 
   @override
-  State<AllExpensesHeader> createState() => _AllExpensesHeaderState();
+  State<IncomeHeader> createState() => _IncomeHeaderState();
 }
 
-class _AllExpensesHeaderState extends State<AllExpensesHeader> {
-  static const List<DropdownMenuItem> allExpensesPeriod = [
+class _IncomeHeaderState extends State<IncomeHeader> {
+  static const List<DropdownMenuItem> incomePeriod = [
     DropdownMenuItem<String>(
       value: 'D',
       child: Text('Daily'),
@@ -30,6 +30,7 @@ class _AllExpensesHeaderState extends State<AllExpensesHeader> {
     )
   ];
   String dropdownValue = 'M';
+
   void dropdownCallBack(dynamic selectedValue) {
     if (selectedValue is String) {
       setState(() {
@@ -44,7 +45,7 @@ class _AllExpensesHeaderState extends State<AllExpensesHeader> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'All Expenses',
+          'Income',
           style: Styles.textStyle20W600,
         ),
         Container(
@@ -54,7 +55,7 @@ class _AllExpensesHeaderState extends State<AllExpensesHeader> {
             borderRadius: BorderRadius.circular(12),
           ),
           child: DropdownButton(
-            items: allExpensesPeriod,
+            items: incomePeriod,
             value: dropdownValue,
             onChanged: dropdownCallBack,
             icon: Padding(
