@@ -11,12 +11,12 @@ class DashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: const Color(0xffF7F9FA),
-        appBar: width + 32 < 800
-            ? PreferredSize(
-                preferredSize: const Size.fromHeight(kToolbarHeight),
+    return Scaffold(
+      backgroundColor: const Color(0xffF7F9FA),
+      appBar: width + 32 < 800
+          ? PreferredSize(
+              preferredSize: const Size.fromHeight(kToolbarHeight),
+              child: SafeArea(
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -48,19 +48,19 @@ class DashboardView extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
-            : null,
-        drawer: Drawer(
-          child: CustomDrawer(
-            userModel: UserModel(
-              imagePath: AppImages.imagesUserFrame,
-              name: 'Ahmed Majed',
-              email: 'demo@gmail.com',
-            ),
+              ),
+            )
+          : null,
+      drawer: Drawer(
+        child: CustomDrawer(
+          userModel: UserModel(
+            imagePath: AppImages.imagesUserFrame,
+            name: 'Ahmed Majed',
+            email: 'demo@gmail.com',
           ),
         ),
-        body: const DashboardBody(),
       ),
+      body: const DashboardBody(),
     );
   }
 }

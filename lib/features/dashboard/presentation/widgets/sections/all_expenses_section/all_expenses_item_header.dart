@@ -15,16 +15,26 @@ class AllExpensesItemHeader extends StatelessWidget {
     double width = MediaQuery.sizeOf(context).width;
 
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        CircleAvatar(
-          backgroundColor: Colors.white.withOpacity(0.1),
-          radius: 30,
-          child: Padding(
-            padding: const EdgeInsets.all(14),
-            child: SvgPicture.asset(iconPath),
+        Flexible(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 60,
+            ),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: CircleAvatar(
+                backgroundColor: Colors.white.withOpacity(0.1),
+                radius: 30,
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: SvgPicture.asset(iconPath),
+                ),
+              ),
+            ),
           ),
         ),
-        width > 800 ? const Spacer() : const SizedBox(),
         width > 800
             ? SvgPicture.asset(isActive
                 ? AppIcons.iconsRightArrowActive

@@ -12,30 +12,45 @@ class AllExpensesItemBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 34),
-        Text(
-          allExpensesItemMode.title,
-          style: isActive
-              ? Styles.textStyle16W600.copyWith(color: Colors.white)
-              : Styles.textStyle16W600,
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(
+            allExpensesItemMode.title,
+            style: isActive
+                ? Styles.textStyle16W600.copyWith(color: Colors.white)
+                : Styles.textStyle16W600,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8),
-          child: Text(
-            '${allExpensesItemMode.month} ${allExpensesItemMode.year}',
-            style: isActive
-                ? Styles.textStyle14W400.copyWith(color: Colors.white)
-                : Styles.textStyle14W400,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              '${allExpensesItemMode.month} ${allExpensesItemMode.year}',
+              textAlign: TextAlign.left,
+              style: isActive
+                  ? Styles.textStyle14W400.copyWith(color: Colors.white)
+                  : Styles.textStyle14W400,
+            ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 16),
-          child: Text(
-            '\$${formatNumber(allExpensesItemMode.amount)}',
-            style: isActive
-                ? Styles.textStyle14W400.copyWith(color: Colors.white)
-                : Styles.textStyle14W400,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              '\$${formatNumber(allExpensesItemMode.amount)}',
+              textAlign: TextAlign.left,
+              style: isActive
+                  ? Styles.textStyle14W400.copyWith(color: Colors.white)
+                  : Styles.textStyle14W400,
+            ),
           ),
         ),
       ],

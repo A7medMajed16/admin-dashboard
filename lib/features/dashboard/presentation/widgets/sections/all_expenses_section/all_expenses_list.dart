@@ -47,8 +47,8 @@ class _AllExpensesListState extends State<AllExpensesList> {
         int index = e.key;
         var item = e.value;
         return Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: index == 1 ? 8 : 0),
+          child: Container(
+            margin: EdgeInsets.only(right: index == 2 ? 0 : 8),
             child: GestureDetector(
               onTap: () => setState(() {
                 selectedIndex = index;
