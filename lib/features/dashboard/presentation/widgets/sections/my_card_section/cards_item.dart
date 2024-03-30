@@ -25,15 +25,16 @@ class CardsItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             CardItemTitle(
               cardName: cardModel.cardName,
             ),
+            const Expanded(child: SizedBox()),
             CardNumber(
               cardModel: cardModel,
             ),
+            const Flexible(child: SizedBox(height: 24)),
           ],
         ),
       ),

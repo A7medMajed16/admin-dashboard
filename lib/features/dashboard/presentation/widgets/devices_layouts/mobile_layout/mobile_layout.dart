@@ -13,7 +13,10 @@ class MobileLayout extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       slivers: [
         SliverFillRemaining(child: AllExpenses()),
-        SliverToBoxAdapter(child: QuickInvoice()),
+        SliverToBoxAdapter(
+            child: QuickInvoice(
+          isMobile: true,
+        )),
         SliverToBoxAdapter(child: MyCard()),
         SliverFillRemaining(hasScrollBody: false, child: Income())
       ],

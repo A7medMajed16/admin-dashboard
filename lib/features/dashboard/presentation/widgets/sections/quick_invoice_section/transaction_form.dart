@@ -3,13 +3,13 @@ import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections
 import 'package:flutter/material.dart';
 
 class TransactionForm extends StatelessWidget {
-  const TransactionForm({super.key});
-
+  const TransactionForm({super.key, required this.isMobile});
+  final bool isMobile;
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Row(
+        const Row(
           children: [
             Expanded(
               child: CustomTextField(
@@ -22,8 +22,8 @@ class TransactionForm extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 24),
-        Row(
+        const SizedBox(height: 24),
+        const Row(
           children: [
             Expanded(
               child: CustomTextField(
@@ -36,8 +36,10 @@ class TransactionForm extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 24),
-        TransactionButtons(),
+        const SizedBox(height: 24),
+        TransactionButtons(
+          isMobile: isMobile,
+        ),
       ],
     );
   }

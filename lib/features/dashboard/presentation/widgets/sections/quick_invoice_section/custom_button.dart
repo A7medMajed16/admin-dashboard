@@ -11,19 +11,25 @@ class CustomButton extends StatelessWidget {
   final Color backgroundColor, textColor;
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      style: TextButton.styleFrom(
-        backgroundColor: backgroundColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+    return SizedBox(
+      width: double.infinity,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: backgroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
         ),
-      ),
-      onPressed: () {},
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 75.5, vertical: 20),
-        child: Text(
-          title,
-          style: Styles.textStyle18W600.copyWith(color: textColor),
+        onPressed: () {},
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 75.5, vertical: 20),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              title,
+              style: Styles.textStyle18W600.copyWith(color: textColor),
+            ),
+          ),
         ),
       ),
     );

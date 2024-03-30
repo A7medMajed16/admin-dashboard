@@ -4,8 +4,8 @@ import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections
 import 'package:flutter/material.dart';
 
 class QuickInvoice extends StatelessWidget {
-  const QuickInvoice({super.key});
-
+  const QuickInvoice({super.key, required this.isMobile});
+  final bool isMobile;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,18 +15,20 @@ class QuickInvoice extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          QuickInvoiceHeader(),
-          SizedBox(height: 24),
-          LatestTransaction(),
-          Divider(
+          const QuickInvoiceHeader(),
+          const SizedBox(height: 24),
+          const LatestTransaction(),
+          const Divider(
             height: 48,
             thickness: 1,
             color: Color(0xffF1F1F1),
           ),
-          TransactionForm(),
+          TransactionForm(
+            isMobile: isMobile,
+          ),
         ],
       ),
     );

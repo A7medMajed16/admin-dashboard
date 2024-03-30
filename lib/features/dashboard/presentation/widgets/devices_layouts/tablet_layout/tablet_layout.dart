@@ -30,7 +30,10 @@ class TabletLayout extends StatelessWidget {
             physics: BouncingScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(child: AllExpenses()),
-              SliverToBoxAdapter(child: QuickInvoice()),
+              SliverToBoxAdapter(
+                  child: QuickInvoice(
+                isMobile: false,
+              )),
               SliverToBoxAdapter(child: MyCard()),
               SliverFillRemaining(hasScrollBody: false, child: Income())
             ],

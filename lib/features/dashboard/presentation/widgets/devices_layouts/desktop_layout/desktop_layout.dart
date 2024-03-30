@@ -33,7 +33,10 @@ class DesktopLayout extends StatelessWidget {
               physics: BouncingScrollPhysics(),
               slivers: [
                 SliverToBoxAdapter(child: AllExpenses()),
-                SliverToBoxAdapter(child: QuickInvoice()),
+                SliverToBoxAdapter(
+                    child: QuickInvoice(
+                  isMobile: false,
+                )),
               ],
             ),
           ),

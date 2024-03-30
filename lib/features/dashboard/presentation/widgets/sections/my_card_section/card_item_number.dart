@@ -31,7 +31,6 @@ class CardNumber extends StatelessWidget {
             style: Styles.textStyle16W400.copyWith(color: Colors.white),
           ),
         ),
-        const SizedBox(height: 24),
       ],
     );
   }

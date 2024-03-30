@@ -13,12 +13,15 @@ class DrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(drawerItemModel.iconPath),
-      title: Text(
-        drawerItemModel.title,
-        overflow: TextOverflow.ellipsis,
-        style: isActive
-            ? Styles.textStyle16W700.copyWith(fontSize: 14)
-            : Styles.textStyle16W400.copyWith(fontSize: 14),
+      title: FittedBox(
+        alignment: Alignment.centerLeft,
+        fit: BoxFit.scaleDown,
+        child: Text(
+          drawerItemModel.title,
+          style: isActive
+              ? Styles.textStyle16W700.copyWith(fontSize: 14)
+              : Styles.textStyle16W400.copyWith(fontSize: 14),
+        ),
       ),
       trailing: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
