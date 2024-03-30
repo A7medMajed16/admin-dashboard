@@ -12,7 +12,7 @@ class MobileLayout extends StatelessWidget {
     return const CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
-        SliverToBoxAdapter(child: AllExpenses()),
+        SliverFillRemaining(child: AllExpenses()),
         SliverToBoxAdapter(child: QuickInvoice()),
         SliverToBoxAdapter(child: MyCard()),
         SliverFillRemaining(hasScrollBody: false, child: Income())
