@@ -6,7 +6,8 @@ import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections
 import 'package:flutter/material.dart';
 
 class MyCard extends StatefulWidget {
-  const MyCard({super.key});
+  const MyCard({super.key, required this.isMobile});
+  final bool isMobile;
 
   @override
   State<MyCard> createState() => _MyCardState();
@@ -49,6 +50,7 @@ class _MyCardState extends State<MyCard> {
           const SizedBox(height: 20),
           CardPageView(
             pageController: pageController,
+            isMobile: widget.isMobile,
           ),
           const SizedBox(height: 19),
           DotsIndicator(

@@ -18,7 +18,10 @@ class MobileLayout extends StatelessWidget {
             child: QuickInvoice(
           isMobile: true,
         )),
-        SliverToBoxAdapter(child: MyCard()),
+        SliverToBoxAdapter(
+            child: MyCard(
+          isMobile: true,
+        )),
         SliverFillRemaining(hasScrollBody: false, child: Income())
       ],
     );

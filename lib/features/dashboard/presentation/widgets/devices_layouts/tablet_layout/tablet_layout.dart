@@ -34,7 +34,10 @@ class TabletLayout extends StatelessWidget {
                   child: QuickInvoice(
                 isMobile: false,
               )),
-              SliverToBoxAdapter(child: MyCard()),
+              SliverToBoxAdapter(
+                  child: MyCard(
+                isMobile: false,
+              )),
               SliverFillRemaining(hasScrollBody: false, child: Income())
             ],
           ),

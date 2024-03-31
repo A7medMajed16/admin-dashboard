@@ -52,6 +52,7 @@ class DashboardView extends StatelessWidget {
             )
           : null,
       drawer: Drawer(
+        width: 250,
         child: CustomDrawer(
           userModel: UserModel(
             imagePath: AppImages.imagesUserFrame,

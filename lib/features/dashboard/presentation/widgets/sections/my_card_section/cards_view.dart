@@ -4,8 +4,10 @@ import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 
 class CardPageView extends StatelessWidget {
-  const CardPageView({super.key, required this.pageController});
+  const CardPageView(
+      {super.key, required this.pageController, required this.isMobile});
   final PageController pageController;
+  final bool isMobile;
   @override
   Widget build(BuildContext context) {
     return ExpandablePageView.builder(
@@ -19,6 +21,7 @@ class CardPageView extends StatelessWidget {
           expiredDate: '12/20',
           cvv: '124',
         ),
+        isMobile: isMobile,
       ),
     );
   }

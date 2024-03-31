@@ -48,7 +48,9 @@ class DesktopLayout extends StatelessWidget {
             child: CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
-                  child: MyCard(),
+                  child: MyCard(
+                    isMobile: false,
+                  ),
                 ),
                 SliverFillRemaining(
                   hasScrollBody: false,

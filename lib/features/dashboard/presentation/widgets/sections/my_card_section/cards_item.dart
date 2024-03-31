@@ -5,8 +5,9 @@ import 'package:admin_dashboard/features/dashboard/presentation/widgets/sections
 import 'package:flutter/material.dart';
 
 class CardsItem extends StatelessWidget {
-  const CardsItem({super.key, required this.cardModel});
+  const CardsItem({super.key, required this.cardModel, required this.isMobile});
   final CardModel cardModel;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,7 @@ class CardsItem extends StatelessWidget {
             const Expanded(child: SizedBox()),
             CardNumber(
               cardModel: cardModel,
+              isMobile: isMobile,
             ),
             const Flexible(child: SizedBox(height: 24)),
           ],
