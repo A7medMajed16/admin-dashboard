@@ -45,10 +45,3 @@ The **Admin Dashboard** app is a responsive and adaptive solution designed to wo
 | google_fonts             | ^6.2.1        |
 | intl                     | ^0.18.1       |
 
-
-
-## Installation
-
-To run the Admin Dashboard app, make sure you have Flutter installed. Then follow these steps:
-
-1. Clone the repository:
